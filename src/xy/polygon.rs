@@ -63,6 +63,7 @@ impl Polygon {
     pub fn label(&self, with_name: bool, with_conf: bool, decimal_places: usize) -> String {
         let mut label = String::new();
         if with_name {
+            dbg!(self.name.as_ref());
             label.push_str(
                 &self
                     .name

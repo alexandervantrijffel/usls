@@ -224,6 +224,7 @@ fn main() -> Result<()> {
     // run & annotate
     for (xs, _paths) in dl {
         let ys = model.forward(&xs)?;
+        dbg!(&ys);
         // extract bboxes
         // for y in ys.iter() {
         //     if let Some(bboxes) = y.bboxes() {

@@ -540,6 +540,7 @@ impl Annotator {
                         self.with_polygons_conf,
                         self.decimal_places,
                     );
+                    dbg!(label.clone());
                     self.put_text(
                         img,
                         &label,
