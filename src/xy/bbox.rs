@@ -280,6 +280,14 @@ impl Bbox {
             && self.ymin() <= other.ymin()
             && self.ymax() >= other.ymax()
     }
+
+    pub fn get_id(&self) -> isize {
+        self.id
+    }
+
+    pub fn get_name(&self) -> Option<&String> {
+        self.name.as_ref()
+    }
 }
 
 #[cfg(test)]
