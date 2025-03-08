@@ -224,15 +224,16 @@ fn main() -> Result<()> {
     // run & annotate
     for (xs, _paths) in dl {
         let ys = model.forward(&xs)?;
+
         // extract bboxes
-        // for y in ys.iter() {
-        //     if let Some(bboxes) = y.bboxes() {
-        //         println!("[Bboxes]: Found {} objects", bboxes.len());
-        //         for (i, bbox) in bboxes.iter().enumerate() {
-        //             println!("{}: {:?}", i, bbox)
-        //         }
-        //     }
-        // }
+        for y in ys.iter() {
+            if let Some(bboxes) = y.bboxes() {
+                println!("[Bboxes]: Found {} objects", bboxes.len());
+                for (i, bbox) in bboxes.iter().enumerate() {
+                    println!("{}: {:?}", i, bbox)
+                }
+            }
+        }
 
         // plot
         annotator.annotate(&xs, &ys);

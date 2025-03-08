@@ -1,6 +1,5 @@
-use aksr::Builder;
-
 use crate::Nms;
+use aksr::Builder;
 
 /// Bounding Box 2D.
 ///
